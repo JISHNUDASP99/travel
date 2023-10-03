@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+ <style>
+        div
+        {
+        background-color:pink;
+        height:300px;
+        width:350px;
+        }
+ </style>
+<body>
+<form method="post" action="register">
+    <center>
+        <div>
+            {% csrf_token %}
+            <h3>sign in</h3>
+            <label>UserName:&nbsp;&nbsp;</label><input type="text" name="username" placeholder="Enter your username"><br>
+            <label>First name:&nbsp;&nbsp;</label><input type="text" name="first_name" placeholder="Enter your firstname"><br>
+            <label>last name:</label>&nbsp;&nbsp; <input type="text" name="last_name" placeholder="Enter your lastname"><br>
+            <label>email:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="email" placeholder="Enter your email"><br>
+            <label>Pass: &nbsp;&nbsp;&nbsp;</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   <input type="password" name="password" placeholder="password"><br>
+            <label>Repass:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="password" name="password" placeholder="conform password"><br><br>
+            <input type="submit">
+        </div>
+    </center>
+</form><center>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</center>
+</body>
+</html>
